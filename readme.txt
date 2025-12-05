@@ -23,12 +23,12 @@ A sample configuration:
  * WordPress SMTP server
  */
 define('WP_SMTP_HOST',       'mail.example.com');
-define('WP_SMTP_PORT',       25);                                // obligatory - default: 25
-define('WP_SMTP_ENCRYPTION', 'tls');                             // obligatory ('tls' or 'ssl') - default: no encryption
+define('WP_SMTP_PORT',        465);                              // obligatory - default: 25
+define('WP_SMTP_ENCRYPTION', 'ssl');                             // obligatory ('tls' or 'ssl') - default: no encryption
 define('WP_SMTP_USER',       'username');                        // obligatory - default: no user
 define('WP_SMTP_PASSWORD',   'password');                        // obligatory - default: no password
-define('WP_SMTP_FROM',       'John Doe <john.doe@example.com>'); // obligatory - default: no custom from address
-define('WP_SMTP_REPLYTO',    'Jane Doe <jane.doe@example.com>'); // obligatory - default: no custom reply to address
+define('WP_SMTP_FROM',       'John Doe <john.doe@example.com>'); // obligatory - default from WordPress: wordpress@example.com, is also set as default wordpress sending address
+define('WP_SMTP_REPLYTO',    'Jane Doe <jane.doe@example.com>'); // obligatory - default: no, custom reply to address
 `
 
 == Installation ==
@@ -47,6 +47,12 @@ You can test your configuration in `Settings -> SMTP Test`.
 If you are running a MU installation you will find this settings page for SMTP Test in your network settings.
 
 == Changelog ==
+
+= 1.3.0 =
+* Code rework
+* Fixed bug default wordpress sending address is set to setting
+* Added help on admin page
+* Added copy button for settings on admin page
 
 = 1.2.0 =
 * Fixed bug settings page not showing for network admin
