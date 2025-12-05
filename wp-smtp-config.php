@@ -266,7 +266,7 @@ function wp_smtp_config_options_page() {
 		<h2><?php esc_html_e( 'Send a Test Email', 'wp-smtp-config' ); ?></h2>
 		<p><?php esc_html_e( 'Enter a valid email address below to send a test message.', 'wp-smtp-config' ); ?></p>
 
-		<form method="post" action="">
+		<form method="post" action="<?php echo esc_url( admin_url( 'options-general.php?page=wp-smtp-config' ) ); ?>">
 			<?php wp_nonce_field( 'wp_smtp_config_test_email' ); ?>
 
 			<table class="form-table" role="presentation">
