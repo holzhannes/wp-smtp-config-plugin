@@ -207,7 +207,8 @@ function wp_smtp_config_options_page_save() {
 			'There was an error while trying to send the test email.',
 		);
 
-		$recipient = isset( $_POST['smtp_recipient'] ) ? trim( wp_unslash( $_POST['smtp_recipient'] ) ) : '';
+		$recipient_raw = isset( $_POST['smtp_recipient'] ) ? wp_unslash( $_POST['smtp_recipient'] ) : '';
+        $recipient = sanitize_email( $recipient_raw);
 
 		if ( is_email( $recipient ) ) {
 
